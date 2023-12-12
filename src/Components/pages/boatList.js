@@ -106,7 +106,7 @@ const BoatList = () => {
       console.log('boat_list_api_err',err)
       setLoading(false)
     })
-  })
+  },[])
 
   // Avoid a layout jump when reaching the last page with empty rows.
   const emptyRows =
