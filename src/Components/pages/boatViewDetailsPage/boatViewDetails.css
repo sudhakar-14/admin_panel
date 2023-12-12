@@ -1,0 +1,184 @@
+.imageBoxTitle {
+    width: 568px;
+    height: 51px;
+    margin: 163.1px 155px 54.9px 10.5px;
+    font-family: Poppins;
+    font-size: 36px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.53;
+    letter-spacing: normal;
+    text-align: left;
+    color: #424651;
+  }
+  .boatViewDetails {
+    background: #f6f6f6;
+  }
+  .line {
+    /* margin: 60px 0px; */
+    border: solid 0.5px rgba(66, 70, 81, 0.8);
+  }
+  .boatOwner h5 {
+    font-family: Poppins;
+    font-size: 20px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.46;
+    letter-spacing: normal;
+    text-align: left;
+    color: #424651;
+    margin-left: -30px;
+  }
+  .boatOwner h6 {
+    color: rgba(66, 70, 81, 0.8);
+    font-family: Poppins;
+    font-size: 18px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.46;
+    letter-spacing: normal;
+    text-align: left;
+    margin-left: -30px;
+  }
+  .greetingMsg {
+    margin: 25px 0px 25px -30px;
+    font-family: Poppins;
+    font-size: 28px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.43;
+    letter-spacing: normal;
+    text-align: left;
+    color: #424651;
+  }
+  .policy_title_text {
+    font-family: Poppins;
+    font-size: 36px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.53;
+    letter-spacing: normal;
+    text-align: left;
+    color: #424651;
+  }
+  :is(.policy_title, .client_review_title) {
+    margin: 50px 0px;
+  }
+  .client_review_title_text {
+    font-family: Poppins;
+    font-size: 36px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.53;
+    letter-spacing: normal;
+    text-align: left;
+    color: #424651;
+  }
+  .boat_details,
+  .boat_services {
+    font-family: Poppins;
+    font-size: 36px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.53;
+    letter-spacing: normal;
+    text-align: left;
+    color: #424651;
+    margin: 50px 0px;
+  }
+  .boat_label,
+  .icons {
+    font-size: 18px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.5;
+    letter-spacing: normal;
+    text-align: left;
+    color: #424651;
+  }
+  .boat_label,
+  .boat_value {
+    font-size: 24px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.46;
+    letter-spacing: normal;
+    text-align: left;
+    color: #424651;
+  }
+  .map {
+    height: 545px;
+    border-radius: 10px;
+  }
+  .avalibility {
+    margin: 155.5px 128.3px 55.1px 0px;
+    font-family: Poppins;
+    font-size: 36px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.53;
+    letter-spacing: normal;
+    text-align: left;
+    color: #424651;
+  }
+  .bestlocation {
+    margin: 163.5px 214.3px 55.1px 0px;
+    font-family: Poppins;
+    font-size: 36px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.53;
+    letter-spacing: normal;
+    text-align: left;
+    color: #424651;
+  }
+  .latitude {
+    font-size: 28px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.5;
+    letter-spacing: normal;
+    text-align: left;
+    color: #424651;
+  }
+  .longtitude {
+    font-family: Poppins;
+    font-size: 22px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.5;
+    letter-spacing: normal;
+    text-align: left;
+    color: #424651;
+  }
+  
+  .view_boat_details_background_img {
+    width: 100%;
+    height: 100%;
+    min-height: 400px;
+    position: sticky;
+    /* background-image: url("../../../assets/Images/ScubaDiving.jpeg"); */
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+  
+    /* Flex properties to center content */
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+  }
+  

@@ -1,0 +1,174 @@
+{
+    "parameters": {
+      "mnistry_transport_document": "upload/1/ministry_transport_document/9efa27fe-ca57-4f24-af60-f52ea23dcadc_MiniDreams Portfolio.pdf",
+      "border_guard_document": "upload/1/border_guard_document/2eefa60f-b40b-4feb-b2cd-c18e474d4274_F1results frontend.pdf",
+      "boat_license_document": "upload/1/boat_license_document/2480b8db-13b1-4365-9cfc-6618d166f5d0_Hariharan P (1) (1) (1).pdf",
+      "ministry_transport_document_verified": 0,
+      "boat_name": "sky jet",
+      "boat_type": "1",
+      "boat_year": "2020",
+      "boat_length": "50",
+      "boat_max_capacity": 2,
+      "marine_name": "new deck",
+      "marine_address": "no1, test street",
+      "latitude": "0",
+      "longtitude": "0",
+      "owner_name": "Omar Abdallah",
+      "greeting_message": "Welcome to the Open Water Diver Course! We are excited to help you start your scuba diving journey and become a certified diver. This course will provide you with the necessary knowledge and skills to explore the underwater world safely and confidently. Let's dive in!",
+      "youtybe_link": null,
+      "boat_id": 2,
+      "user_id": 1,
+      "is_active": 1,
+      "available_hours": "10",
+      "border_guard_document_verified": 0,
+      "boat_license_document_verified": 0,
+      "marine_city": "riyadh",
+      "marine_state": "riyadh",
+      "marine_pincode": "12211",
+      "price_per_hour": "100",
+      "price_currency": "SAR",
+      "background_image": "upload/1/background_image/f02291a9-e782-4ba5-9456-aefa91ce7cf8_Vector-11.png",
+      "front_image": "upload/1/front_image/2784d1c3-0dc2-43e3-bb9a-aea35b913c8c_1Home Page.png",
+      "createdAt": "2023-07-07T05:43:52.000Z",
+      "updatedAt": "2023-07-07T05:43:52.000Z",
+      "boats_timeslot": [
+        {
+          "id": 1,
+          "boat_id": 2,
+          "start_time": "12.00pm",
+          "date": "22/06/2023",
+          "createdAt": "2023-07-07T05:43:52.000Z",
+          "updatedAt": "2023-07-07T05:43:52.000Z",
+          "user_id": null
+        },
+        {
+          "id": 2,
+          "boat_id": 2,
+          "start_time": "4.00pm",
+          "date": "22/06/2023",
+          "createdAt": "2023-07-07T05:43:52.000Z",
+          "updatedAt": "2023-07-07T05:43:52.000Z",
+          "user_id": null
+        },
+        {
+          "id": 3,
+          "boat_id": 2,
+          "start_time": "6.00pm",
+          "date": "22/06/2023",
+          "createdAt": "2023-07-07T05:43:52.000Z",
+          "updatedAt": "2023-07-07T05:43:52.000Z",
+          "user_id": null
+        },
+        {
+          "id": 4,
+          "boat_id": 2,
+          "start_time": "4.00pm",
+          "date": "25/06/2023",
+          "createdAt": "2023-07-07T05:43:52.000Z",
+          "updatedAt": "2023-07-07T05:43:52.000Z",
+          "user_id": null
+        },
+        {
+          "id": 5,
+          "boat_id": 2,
+          "start_time": "8.00pm",
+          "date": "22/06/2023",
+          "createdAt": "2023-07-07T05:43:52.000Z",
+          "updatedAt": "2023-07-07T05:43:52.000Z",
+          "user_id": null
+        }
+      ],
+      "boats_service": [
+        {
+          "service_label_id": 1,
+          "service_label": "hi",
+          "boat_id": 2,
+          "id": 1,
+          "createdAt": "2023-07-07T05:43:52.000Z",
+          "updatedAt": "2023-07-07T05:43:52.000Z"
+        },
+        {
+          "service_label_id": 3,
+          "service_label": "hi",
+          "boat_id": 2,
+          "id": 2,
+          "createdAt": "2023-07-07T05:43:52.000Z",
+          "updatedAt": "2023-07-07T05:43:52.000Z"
+        }
+      ],
+      "boats_details": [
+        {
+          "details_label_id": 1,
+          "details_label": "Length",
+          "details_value": "hi",
+          "boat_id": 2,
+          "id": 1,
+          "createdAt": "2023-07-07T05:43:52.000Z",
+          "updatedAt": "2023-07-07T05:43:52.000Z"
+        },
+        {
+          "details_label_id": 3,
+          "details_label": "Type",
+          "details_value": "hi",
+          "boat_id": 2,
+          "id": 2,
+          "createdAt": "2023-07-07T05:43:52.000Z",
+          "updatedAt": "2023-07-07T05:43:52.000Z"
+        }
+      ],
+      "boats_image": [
+        {
+          "id": 1,
+          "boat_id": 2,
+          "path": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQxCCez5Ntwp2Ph4ZhUSX6ErQn_xTc1wIrBhw&usqp=CAU",
+          "createdAt": "2023-07-07T05:43:52.000Z",
+          "updatedAt": "2023-07-07T05:43:52.000Z"
+        },
+        {
+          "id": 2,
+          "boat_id": 2,
+          "path": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQxCCez5Ntwp2Ph4ZhUSX6ErQn_xTc1wIrBhw&usqp=CAU",
+          "createdAt": "2023-07-07T05:43:52.000Z",
+          "updatedAt": "2023-07-07T05:43:52.000Z"
+        },
+        {
+          "id": 3,
+          "boat_id": 2,
+          "path": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQxCCez5Ntwp2Ph4ZhUSX6ErQn_xTc1wIrBhw&usqp=CAU",
+          "createdAt": "2023-07-07T05:43:52.000Z",
+          "updatedAt": "2023-07-07T05:43:52.000Z"
+        },
+        {
+          "id": 4,
+          "boat_id": 2,
+          "path": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQxCCez5Ntwp2Ph4ZhUSX6ErQn_xTc1wIrBhw&usqp=CAU",
+          "createdAt": "2023-07-07T05:43:52.000Z",
+          "updatedAt": "2023-07-07T05:43:52.000Z"
+        }
+      ],
+      "boats_cancellation_policy": [
+        {
+          "id": 1,
+          "boat_id": 2,
+          "policy_statement": "Cancellations made 7 days or more in advance of the event date, will receive a 100% refund.",
+          "createdAt": "2023-07-07T05:43:52.000Z",
+          "updatedAt": "2023-07-07T05:43:52.000Z"
+        },
+        {
+          "id": 2,
+          "boat_id": 2,
+          "policy_statement": "Cancellations made within 3 - 6 days will incur a 20% fee.",
+          "createdAt": "2023-07-07T05:43:52.000Z",
+          "updatedAt": "2023-07-07T05:43:52.000Z"
+        },
+        {
+          "id": 3,
+          "boat_id": 2,
+          "policy_statement": "Cancellations made within 48 hours to the event will incur a 30% fee.",
+          "createdAt": "2023-07-07T05:43:52.000Z",
+          "updatedAt": "2023-07-07T05:43:52.000Z"
+        }
+      ]
+    }
+  }
+  

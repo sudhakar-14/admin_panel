@@ -1,0 +1,174 @@
+.slide-styles {
+    display: flex;
+    width: 100%;
+    /* height: 500px; */
+    border-radius: 10px;
+    background-size: cover;
+    background-position: center;
+    /* position: "relative", */
+    /* height: "100%", */
+  }
+  
+  .right-arrow-styles {
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+    right: 32px;
+    font-size: 45px;
+    color: #fff;
+    z-index: 1;
+    cursor: pointer;
+  }
+  
+  .left-arrow-styles {
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+    left: 32px;
+    font-size: 45px;
+    color: #fff;
+    z-index: 1;
+    cursor: pointer;
+  }
+  
+  .slider-styles {
+    position: relative;
+    height: 100%;
+    /* background-color: #3973a5; */
+  }
+  
+  .dots-container-styles {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .selected-dots {
+    margin: 0 3px;
+    cursor: pointer;
+    font-size: 20px;
+    /* color: #3973a5; */
+    color: whitesmoke;
+  }
+  
+  .dot-style {
+    margin: 0 3px;
+    cursor: pointer;
+    font-size: 20px;
+    /* color: whitesmoke; */
+    color: #3973a5;
+  }
+  .left-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+    left: 32px;
+    font-size: 45px;
+    color: #fff;
+    z-index: 1;
+    cursor: pointer;
+    width: 7%;
+    /* height: 15%; */
+  }
+  .right-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+    right: 32px;
+    font-size: 45px;
+    color: #fff;
+    z-index: 1;
+    cursor: pointer;
+    width: 7%;
+    /* height: 15%; */
+  }
+  
+  /* Add this style to your modal overlay to create the overlay effect */
+  .modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(
+      0,
+      0,
+      0,
+      0.5
+    ); /* Adjust the alpha value for the overlay color */
+    z-index: 9999; /* Ensure the modal appears above other elements */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Add this style to the modal content to set its dimensions and hide overflow */
+  .modal-content {
+    max-width: 80%; /* Adjust the maximum width of the modal content */
+    max-height: 80%; /* Adjust the maximum height of the modal content */
+    overflow: hidden; /* Hide any content that exceeds the modal's dimensions */
+    background-color: rgba(0, 0, 0, 0.5);
+  
+    padding: 20;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  }
+  
+  .slides-img-style {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    align-self: center;
+    align-content: center;
+    justify-content: center;
+    /* height: 700px; */
+    /* height: 1000px; */
+    border-radius: 10px;
+    /* background-size: cover; */
+    /* background-position: center; */
+  }
+  
+  @media (max-width: 967px) {
+    .slides-img-style {
+      display: flex;
+      width: 100%;
+      height: 600px;
+      border-radius: 10px;
+      background-size: cover;
+      background-position: center;
+    }
+  }
+  
+  @media (max-width: 767px) {
+    /* Add this style to the modal content to set its dimensions and hide overflow */
+    .modal-content {
+      max-width: 100%; /* Adjust the maximum width of the modal content */
+      max-height: 100%; /* Adjust the maximum height of the modal content */
+      overflow: hidden; /* Hide any content that exceeds the modal's dimensions */
+      background-color: rgba(0, 0, 0, 0.5);
+  
+      padding: 20;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    }
+  
+    .slides-img-style {
+      display: flex;
+      width: 100%;
+      height: 500px;
+      border-radius: 10px;
+      background-size: cover;
+      background-position: center;
+    }
+  }
+  
+  @media (max-width: 567px) {
+    .slides-img-style {
+      display: flex;
+      width: 100%;
+      height: 300px;
+      border-radius: 10px;
+      background-size: cover;
+      background-position: center;
+    }
+  }
+  
