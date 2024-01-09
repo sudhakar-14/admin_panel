@@ -1,8 +1,34 @@
 import "./ImageSlider.css";
 
 import IMAGES from "../../../images/Images";
+import { useEffect, useState } from "react";
+import { Document, Page, pdfjs } from 'react-pdf';
 
-const ImageSlider = ({ slides, show, onClose, goToPrevious, goToNext }) => {
+const ImageSlider = ({ slides, onClose, goToPrevious, goToNext, showButton, getVerify }) => {
+  const [check, setCheck] = useState(null)
+	const [numPages, setNumPages] = useState(0);
+	const [pageNumber, setPageNumber] = useState(1);
+  pdfjs.GlobalWorkerOptions.workerSrc = `//unpkg.com/pdfjs-dist@${pdfjs.version}/legacy/build/pdf.worker.min.js`;
+
+  useEffect(()=>{
+    getVerify({check})
+  },[check])
+
+  const onDocumentLoadSuccess = ({ numPages }) => {
+		setNumPages(numPages);
+	};
+
+  const goToPrevPage = () =>
+		setPageNumber(pageNumber - 1 <= 1 ? 1 : pageNumber - 1);
+
+	const goToNextPage = () =>
+		setPageNumber(
+			pageNumber + 1 >= numPages ? numPages : pageNumber + 1,
+		);
+
+  const handleVerify = (verify) =>{
+    setCheck(verify)
+  }
   const handleContentClick = (event) => {
     // Prevent propagation of click events to the parent elements
     event.stopPropagation();
@@ -51,7 +77,50 @@ const ImageSlider = ({ slides, show, onClose, goToPrevious, goToNext }) => {
               />
             </div>
             {slides ? (
-              <img alt="boat img" src={slides} className="slides-img-style" />
+              <div className="d-flex flex-column gap-3">
+                <div className="d-flex justify-content-center w-100">
+                  { showButton?
+                    <div className="d-flex gap-3">
+                    <button 
+                    type="button" 
+                    className="btn btn-success"
+                    onClick={
+                      ()=>handleVerify('1')
+                    }
+                    >
+                      Verify
+                    </button>
+                    <button 
+                    type="button" 
+                    className="btn btn-danger"
+                    onClick={
+                      ()=>handleVerify('0')
+                    }
+                    >
+                      Cancel
+                    </button>
+                    </div>
+                    :null
+                  }
+                </div>
+                <div>
+                  {/* <img alt="boat img" src={slides} className="slides-img-style" /> */}
+                  {/* <nav>
+                    <button onClick={goToPrevPage}>Prev</button>
+                    <button onClick={goToNextPage}>Next</button>
+                    <p>
+                      Page {pageNumber} of {numPages}
+                    </p>
+                  </nav> */}
+
+                  <Document
+                    file={require('../../../assets/documents/EPFO_shanthi.pdf')} //require('../../../assets/documents/EPFO_shanthi.pdf')
+                    onLoadSuccess={onDocumentLoadSuccess}
+                  >
+                    <Page pageNumber={pageNumber} />
+                  </Document>
+                </div>
+              </div>
             ) : null}
           </div>
         </div>

@@ -32,11 +32,11 @@ import { easings, useSpring } from "react-spring";
 //   single_boat_details_store,
 // } from "../../../redux/slices";
 // import { API } from "../../../Service/constants";
-import { Skeleton } from "@mui/material";
+import { Box, Skeleton } from "@mui/material";
 import { API } from "../../../api/endPoint";
 import IMAGES from "../../../images/Images";
 import { useLocation, useNavigate } from "react-router-dom";
-import { boat_detail } from "../../../api/api";
+import { boat_detail, verified_document, verified_documents } from "../../../api/api";
 
 const CustomCheckbox = withStyles({
   root: {
@@ -70,6 +70,13 @@ const BoatViewDetails = () => {
   const [selectedImageUrl_index, setSelectedImageUrl_index] = useState(false);
   const [selectedImageUrlFullData, setSelectedImageUrlFullData] =
     useState(false);
+  const [showButton, setShowButton] = useState(false)
+  const [document, setDocument] = useState('')
+  const [verified, setVerified] = useState(null)
+  const [errMsg, setErrMsg] = useState('')
+  const [ministry, setMinistry] = useState(null)
+  const [border, setBorder] = useState(null)
+  const [boat_license, setBoat_license] = useState(null)
   const [Image1Spring, Image1Api] = useSpring(() => ({
     config: {
       duration: 750,
@@ -124,11 +131,13 @@ const BoatViewDetails = () => {
     setShowModal(false);
   };
 
-  const handleImageClick = (item, index) => {
+  const handleImageClick = (item, index, button, document) => {
     setShowModal(true);
     setSelectedImageUrl(`${API.baseUrls[API.currentEnv]}${item[index]?.path}`);
     setSelectedImageUrlFullData(item);
     setSelectedImageUrl_index(index);
+    setShowButton(button)
+    setDocument(document)
   };
 
   const goToPrevious = () => {
@@ -136,7 +145,8 @@ const BoatViewDetails = () => {
       boatDetails?.boats_image,
       selectedImageUrl_index > 0
         ? selectedImageUrl_index - 1
-        : boatDetails?.boats_image?.length - 1
+        : boatDetails?.boats_image?.length - 1,
+      false
     );
   };
 
@@ -145,9 +155,46 @@ const BoatViewDetails = () => {
       boatDetails?.boats_image,
       selectedImageUrl_index + 1 < boatDetails?.boats_image?.length
         ? selectedImageUrl_index + 1
-        : 0
+        : 0,
+      false
     );
   };
+
+  const handleGetVerify = (verified) =>{
+    if(document === 'ministry'){
+      setMinistry(verified.check)
+    }
+    if(document === 'border'){
+      setBorder(verified.check)
+    }
+    if(document === 'boat_license'){
+      setBoat_license(verified.check)
+    }
+  }
+  console.log(ministry,border,boat_license,'verified')
+
+  const handleSubmit = () =>{
+    setErrMsg('')
+    if(
+      ministry !== 0 && !ministry &&
+      verified.border !== 0 && !border &&
+      boat_license !== 0 && !boat_license
+      ){
+      setErrMsg('Please Verify All Documents')
+    }
+    else if(!errMsg){
+      let payload = {
+      ministry_transport_document_verified : ministry,
+      border_guard_document_verified : border,
+      boat_license_document_verified : boat_license,
+      boatId : boatDetails?.boat_id
+      }
+      verified_documents(payload)
+      console.log(payload, 'payload')
+    } else {
+      console.log('not working')
+    }
+  }
 
   return (
     <>
@@ -237,6 +284,9 @@ const BoatViewDetails = () => {
                     index={selectedImageUrl_index}
                     goToPrevious={goToPrevious}
                     goToNext={goToNext}
+                    showButton={showButton}
+                    document={document}
+                    getVerify={handleGetVerify}
                   />
                 </>
               ) : null}
@@ -258,7 +308,7 @@ const BoatViewDetails = () => {
                           }}
                           onClick={
                             () =>
-                              handleImageClick(boatDetails?.boats_image, index)
+                              handleImageClick(boatDetails?.boats_image, index, false, document)
                             // boatData?.boats_image
                             // image?.path
                             //   ? `${`http://localhost:3000/`}${image.path}`
@@ -962,6 +1012,72 @@ const BoatViewDetails = () => {
                 </>
               )}
             </div>
+            <div className="d-flex flex-column gap-3">
+              <div className='fw-bold fs-2 pb-2'>
+                Verification Documents
+              </div>
+              <div className={class_name.verification_div}>
+                <div>
+                  <img
+                    src={
+                    `${API.baseUrls[API.currentEnv]}${boatDetails?.ministry_transport_document}`
+                    }
+                    alt="carousal_img"
+                    className={class_name.boat_imgs}
+                    style={{
+                      ...Image1Spring,
+                    }}
+                    onClick={
+                      () =>
+                        handleImageClick(boatDetails?.ministry_transport_document, null, true, 'ministry')
+                    }
+                  />
+                </div>
+                <div>
+                  <img
+                    src={
+                    `${API.baseUrls[API.currentEnv]}${boatDetails?.border_guard_document}`
+                    }
+                    alt="carousal_img"
+                    className={class_name.boat_imgs}
+                    style={{
+                      ...Image1Spring,
+                    }}
+                    onClick={
+                      () =>
+                        handleImageClick(boatDetails?.border_guard_document, null, true, 'border')
+                    }
+                  />
+                </div>
+                <div>
+                  <img
+                    src={
+                    `${API.baseUrls[API.currentEnv]}${boatDetails?.boat_license_document}`
+                    }
+                    alt="carousal_img"
+                    className={class_name.boat_imgs}
+                    style={{
+                      ...Image1Spring,
+                    }}
+                    onClick={
+                      () =>
+                        handleImageClick(boatDetails?.boat_license_document, null, true, 'boat_license')
+                    }
+                  />
+                </div>
+              </div>
+              <div className="text-danger fs-6">
+                {errMsg}
+              </div>
+              <div className=''>
+                <button 
+                className="btn btn-success"
+                onClick={()=>handleSubmit()}
+                >
+                  Submit
+                </button>
+              </div>
+            </div>
             {isLoading ? (
               <Typography
                 className={class_name.owner_name}
@@ -1177,6 +1293,8 @@ const BoatViewDetails = () => {
             ) : (
               <Skeleton width={"100%"} height={80} />
             )}
+          </div>
+          <div>
           </div>
           <div className="footer-style-hide">
             {/* <Footer /> */}
@@ -1597,6 +1715,12 @@ const useStyles = makeStyles((theme) => ({
   [theme.breakpoints.down('767')]: {
     width: '100%'
   }
+  },
+  verification_div:{
+    boxShadow: 'rgba(99, 99, 99, 0.2) 0px 2px 8px 0px',
+    display: 'flex',
+    justifyContent:'space-around',
+    gap:'10px'
   },
   //
   //

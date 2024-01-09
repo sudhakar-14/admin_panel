@@ -12,6 +12,7 @@ export const API = {
         boat_list: 'admin/boatList',
         boat_details: 'admin/boat_details',
         verified_boat_details: 'admin/verified_boat_details',
-        user_blocked: 'admin/user_blocked'
+        user_blocked: 'admin/user_blocked',
+        UpdateDocumentVerification: '/UpdateDocumentVerification'
     }
 }

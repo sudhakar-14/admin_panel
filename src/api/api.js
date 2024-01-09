@@ -34,3 +34,10 @@ export function user_blocked(data){
         data
     )
 }
+
+export function verified_documents(data){
+    return axios.post(
+        API.baseUrls[API.currentEnv] + API.authUrls.UpdateDocumentVerification,
+        data
+    )
+}
